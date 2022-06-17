@@ -19,21 +19,22 @@ INSERT INTO pedidos (status, cliente_id)
 
 INSERT INTO produtos_pedidos (pedido_id, produto_id)
   VALUES 
-  ((SELECT id FROM pedidos ped WHERE ped.cliente_id =
-   (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
+  ((SELECT id FROM pedidos ped WHERE ped.cliente_id = (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
   (SELECT id FROM produtos prod WHERE prod.nome = 'Big Serial')),
-  ((SELECT id FROM pedidos ped WHERE ped.cliente_id =
-   (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
+
+  ((SELECT id FROM pedidos ped WHERE ped.cliente_id = (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
   (SELECT id FROM produtos prod WHERE prod.nome = 'Varchapa')),
-  ((SELECT id FROM pedidos ped WHERE ped.cliente_id =
-   (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
+
+  ((SELECT id FROM pedidos ped WHERE ped.cliente_id = (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
   (SELECT id FROM produtos prod WHERE prod.nome = 'Fritas')),
-    ((SELECT id FROM pedidos ped WHERE ped.cliente_id =
-   (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
+
+  ((SELECT id FROM pedidos ped WHERE ped.cliente_id = (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
   (SELECT id FROM produtos prod WHERE prod.nome = 'Coca-Cola')),
-      ((SELECT id FROM pedidos ped WHERE ped.cliente_id =
-   (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
+
+  ((SELECT id FROM pedidos ped WHERE ped.cliente_id = (SELECT id FROM clientes c WHERE c.nome = 'Georgia')), 
   (SELECT id FROM produtos prod WHERE prod.nome = 'Coca-Cola'));
+
+--((Selecionando ID do pedido onde o ID do Cliente for igual ao ID do cliente de nome Georgia), (Selecionando o ID do produto de nome Big Serial))
 
 -- Leitura
 
